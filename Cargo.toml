@@ -34,10 +34,7 @@ malva = {
   rev = "9a7ee71bfad747490ebe0428d07d1f82467f0c3f",
   features = ["config_serde"],
 }
-markup_fmt = {
-  git = "https://github.com/UnknownPlatypus/markup_fmt",
-  rev = "82ba55ca86570c88788a8c526fdfdf939a6adfd8",
-}
+markup_fmt = { git = "https://github.com/Stickbuilt/markup_fmt", rev = "85b45932781f22d6eac7aed75227e117695f01d2" }
 memchr = { version = "2.8.3" }
 miette = { package = "oxc-miette", version = "3.0.1", features = ["fancy"] }
 proc-macro2 = { version = "1.0" }
