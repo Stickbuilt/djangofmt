@@ -301,25 +301,3 @@ jobs:
             release_args+=("$PRERELEASE_FLAG")
           fi
           gh release create "$RELEASE_TAG" --target "$RELEASE_COMMIT" "${release_args[@]}" --title "$ANNOUNCEMENT_TITLE" --notes-file "$RUNNER_TEMP/notes.txt" artifacts/*
-
-  custom-release-notify-pre-commit-mirror:
-    needs:
-      - plan
-      - announce
-    uses: $/.github/workflows/release-notify-pre-commit-mirror.yml
-    with:
-      plan: ${{ needs.plan.outputs.val }}
-    secrets: inherit
-
-  custom-publish-playground-and-docs:
-    needs:
-      - plan
-      - announce
-    uses: $/.github/workflows/publish-playground-and-docs.yml
-    with:
-      plan: ${{ needs.plan.outputs.val }}
-    secrets: inherit
-    permissions:
-      "contents": "read"
-      "id-token": "write"
-      "pages": "write"
